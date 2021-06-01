@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+<div style="color:rgb(48, 130, 181);">
+<br><br>
+<div class = "jumbotron text-left">
+<h3>Sorunlar</h3>
+<hr>
+{% if sorunlar %}
+<form action="/search" method = "post">
+  <input type="text" name="keyword" class="input-sm" maxlength="70" placeholder="ARA">
+  <button type="submit" class="btn btn-danger">ARA</button>
+</form>
+<ul class="list-group">
+    {% for sorunlar in sorunlar %}
+     <li class="list-group-item"><a href="sorun/{{sorunlar.id}}">{{sorunlar.baslik}}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+<div class = "alert alert-danger">Buraya Henüz Sorun Eklenmemiş.</div>
+</div>
+</div>
+{% endif %}
+{% endblock body %}

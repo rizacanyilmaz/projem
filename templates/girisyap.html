@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+<div style="color:rgb(48, 130, 181);">
+<br>
+<div class = "jumbotron text-center">
+<h3>GİRİŞ YAP</h3>
+<hr>
+{% from 'includes/formhelpers.html' import render_field %}
+<form method=post>
+        {{ render_field(form.kullaniciadi, class = "form-control")}}
+        {{ render_field(form.parola, class = "form-control")}}
+    <button type="submit" class="btn btn-primary">GİRİŞ YAP</button>
+<p>Hesabınız Yok Mu?<a href="http://127.0.0.1:5000/kayitol"><p>Kaydolmak İçin Tıklayın</p></a></p>
+</form>
+</div>
+</div>
+{% endblock body %}

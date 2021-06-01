@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Ana Sayfa</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="yardımedebileceklerimiz">Yardım Edebileceklerimiz <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="iletişimadresleri">İletişim Adreslerimiz</a>
+      </li>
+      <li>
+      <a class="nav-link" href="sorunbildir">Sorun Bildir</a>
+      </li>
+      <li>
+        <a class="nav-link" href="sorunlar">Sorunlar</a>
+        </li>
+    </ul>
+        <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Kontroller
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {% if session["logged_in"] == true %}
+          <a class="dropdown-item" href="cıkısyap">Çıkış Yap</a>
+          <a class="dropdown-item" href="kontrolpaneli">Kontrol Paneli</a>
+          <a class="dropdown-item" href="haftaninfilmi">Bu Haftanın Filmi</a>
+          {% else %}
+          <a class="dropdown-item" href="kayitol">Kayıt Ol</a>
+          <a class="dropdown-item" href="girisyap">Giriş Yap</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/admin">Admin</a>
+        </ul>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+<form action="/search" method = "post">
+  <input type="text" name="keyword" class="input-sm" maxlength="70" placeholder="ARA">
+  <button type="submit" class="btn btn-danger">ARA</button>
+</form>
+  </div>
+</nav>
